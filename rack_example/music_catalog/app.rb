@@ -11,4 +11,8 @@ class MusicCatalog < Sinatra::Base
   haml :about
  end
 
+get "/contact" do
+  haml :contact
+end
+
 end
