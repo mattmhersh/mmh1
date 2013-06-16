@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+!!!
+%html{:lang => "en", "ng-app" => ""}
 <html ng-app>
   <head>
     <link rel="stylesheet" href="/css/site.css">
