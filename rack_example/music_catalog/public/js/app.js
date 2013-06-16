@@ -1,5 +1,3 @@
-alert('a');
-
 function TodoCtrl($scope) {
     $scope.todos = [
         {text:'learn angular', done:true},

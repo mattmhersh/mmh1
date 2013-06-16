@@ -25,30 +25,33 @@
                 %a{:href => "/about"} About
               %li
                 %a{:href => "/contact"} Contact
-              %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Dropdown
-                  %b.caret
-                %ul.dropdown-menu
-                  %li
-                    %a{:href => "#"} Action
-                  %li
-                    %a{:href => "#"} Another action
-                  %li
-                    %a{:href => "#"} Something else here
-                  %li.divider
-                  %li.nav-header Nav header
-                  %li
-                    %a{:href => "#"} Separated link
-                  %li
-                    %a{:href => "#"} One more separated link
-          / /.nav-collapse
     .container
+
       %div
       %label Name:
       %input{"ng-model" => "yourName", :placeholder => "Enter a name here", :type => "text"}/
       %hr/
       %h1 Hello {{yourName}}!
+
+
+
+      %h2 Todo
+      %div{"ng-controller" => "TodoCtrl"}
+        %span {{remaining()}} of {{todos.length}} remaining
+        [
+        %a{:href => "", "ng-click" => "archive()"} archive
+        ]
+        %ul.unstyled
+          %li{"ng-repeat" => "todo in todos"}
+            %input{"ng-model" => "todo.done", :type => "checkbox"}/
+            %span{:class => "done-{{todo.done}}"} {{todo.text}}
+
+        %form{"ng-submit" => "addTodo()"}
+          %input{"ng-model" => "todoText", :placeholder => "add new todo here", :size => "30", :type => "text"}/
+          %input.btn-primary{:type => "submit", :value => "add"}/
+
+
+
       / Example row of columns
       .row
         .span4
