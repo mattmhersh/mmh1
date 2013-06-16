@@ -1,6 +1,6 @@
 function TodoCtrl($scope) {
     $scope.todos = [
-        {text:'learn angular', done:true},
+        {text:'learn angular 2', done:true},
         {text:'build an angular app', done:false}];
 
     $scope.addTodo = function() {
@@ -24,5 +24,3 @@ function TodoCtrl($scope) {
         });
     };
 }
-
-$scope.user = [ { FirstName : 'Bob' } ];
