@@ -24,3 +24,5 @@ function TodoCtrl($scope) {
         });
     };
 }
+
+$scope.user = [ { FirstName : 'Bob' } ];
