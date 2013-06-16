@@ -3,11 +3,11 @@ require "sinatra/base"
 require "haml"
 require "rdiscount"
 
-set :markdown, :layout_engine => :haml, :format => :html5
+set :markdown, :layout_engine => :haml
 
 class MusicCatalog < Sinatra::Base
  get "/" do
-   markdown :index, haml :layout => :layout2
+   markdown :index, :layout => :layout2
  end
 
  get "/about" do
