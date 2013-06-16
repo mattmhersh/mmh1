@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/site.css">
   </head>
   <body>
-    <h2>Todo 3</h2>
+    <h2>Todo 4</h2>
     <div ng-controller="TodoCtrl">
       <span>{{remaining()}} of {{todos.length}} remaining</span>
       [ <a href="" ng-click="archive()">archive</a> ]
