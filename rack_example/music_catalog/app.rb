@@ -3,7 +3,7 @@ require "sinatra/base"
 require "haml"
 require "rdiscount"
 
-set :markdown
+set :markdown, :layout_engine => :haml
 
 class MusicCatalog < Sinatra::Base
  get "/" do
