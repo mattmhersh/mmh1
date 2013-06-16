@@ -1,78 +1,43 @@
-!!!
-%html{:lang => "en", "ng-app" => ""}
-  %head
-    %meta{:charset => "utf-8"}/
-    %title Hersh - Designs
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %link{:href => "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css", :rel => "stylesheet"}/
-    %link{:href => "/css/site.css", :rel => "stylesheet"}/
-  %body
-    .navbar.navbar-inverse.navbar-fixed-top
-      .navbar-inner
-        .container
-          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "#"} Matt Hersh
-          .nav-collapse.collapse
-            %ul.nav
-              %li.active
-                %a{:href => "#"} Home
-              %li
-                %a{:href => "/about"} About
-              %li
-                %a{:href => "/contact"} Contact
-    .container
+%div
+%label Name:
+%input{"ng-model" => "yourName", :placeholder => "Enter a name here", :type => "text"}/
+%hr/
+%h1 Hello {{yourName}}!
 
-      %div
-      %label Name:
-      %input{"ng-model" => "yourName", :placeholder => "Enter a name here", :type => "text"}/
-      %hr/
-      %h1 Hello {{yourName}}!
+%p User: {{User.FirstName}}.
 
-      %p User: {{User.FirstName}}.
+%h2 Todo
+%div{"ng-controller" => "TodoCtrl"}
+  %span {{remaining()}} of {{todos.length}} remaining
+  [
+  %a{:href => "", "ng-click" => "archive()"} archive
+  ]
+  %ul.unstyled
+    %li{"ng-repeat" => "todo in todos"}
+      %input{"ng-model" => "todo.done", :type => "checkbox"}/
+      %span{:class => "done-{{todo.done}}"} {{todo.text}}
 
-      %h2 Todo
-      %div{"ng-controller" => "TodoCtrl"}
-        %span {{remaining()}} of {{todos.length}} remaining
-        [
-        %a{:href => "", "ng-click" => "archive()"} archive
-        ]
-        %ul.unstyled
-          %li{"ng-repeat" => "todo in todos"}
-            %input{"ng-model" => "todo.done", :type => "checkbox"}/
-            %span{:class => "done-{{todo.done}}"} {{todo.text}}
-
-        %form{"ng-submit" => "addTodo()"}
-          %input{"ng-model" => "todoText", :placeholder => "add new todo here", :size => "30", :type => "text"}/
-          %input.btn-primary{:type => "submit", :value => "add"}/
+  %form{"ng-submit" => "addTodo()"}
+    %input{"ng-model" => "todoText", :placeholder => "add new todo here", :size => "30", :type => "text"}/
+    %input.btn-primary{:type => "submit", :value => "add"}/
 
 
 
-      / Example row of columns
-      .row
-        .span4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          %p
-            %a.btn{:href => "#"} View details »
-        .span4
-          %h2 Heading
-          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          %p
-            %a.btn{:href => "#"} View details »
-        .span4
-          %h2 Heading
-          %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-          %p
-            %a.btn{:href => "#"} View details »
-      %hr/
-      %footer
-        %p © Hersh Designs 2013
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
-    %script{:src => "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"}
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"}
-    %script{:src => "/js/app.js"}
+/ Example row of columns
+.row
+  .span4
+    %h2 Heading
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    %p
+      %a.btn{:href => "#"} View details »
+  .span4
+    %h2 Heading
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    %p
+      %a.btn{:href => "#"} View details »
+  .span4
+    %h2 Heading
+    %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+    %p
+      %a.btn{:href => "#"} View details »
+%hr/
