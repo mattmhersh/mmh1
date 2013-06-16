@@ -1,4 +1,3 @@
-<!DOCTYPE>
 <html ng-app>
   <head>
     <link rel="stylesheet" href="/css/site.css">
