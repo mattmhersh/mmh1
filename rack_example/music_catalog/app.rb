@@ -7,7 +7,7 @@ set :markdown, :layout_engine => :haml
 
 class MusicCatalog < Sinatra::Base
  get "/" do
-   markdown :index
+   markdown :index, :layout => false
  end
 
  get "/about" do
