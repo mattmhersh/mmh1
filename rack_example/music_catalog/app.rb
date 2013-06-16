@@ -1,10 +1,13 @@
 require "rubygems"
 require "sinatra/base"
 require "haml"
+require "rdiscount"
+
+set :markdown, :layout_engine => :haml
 
 class MusicCatalog < Sinatra::Base
  get "/" do
-   haml :index
+   markdown :index
  end
 
  get "/about" do

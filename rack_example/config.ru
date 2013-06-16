@@ -7,6 +7,7 @@ require "rubygems"
 require "sinatra"
 require "haml"
 
+
 require File.dirname(__FILE__) + "/music_catalog/app.rb"
 
 map "/" do
