@@ -7,11 +7,7 @@
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
     %link{:href => "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css", :rel => "stylesheet"}/
-    :css
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
+    %link{:href => "/css/site.css", :rel => "stylesheet"}/
   %body
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
@@ -20,7 +16,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "#"} Project name
+          %a.brand{:href => "#"} Matt Hersh
           .nav-collapse.collapse
             %ul.nav
               %li.active
@@ -54,8 +50,7 @@
     .container
       / Main hero unit for a primary marketing message or call to action
       .hero-unit
-        %h1 Matt Hersh
-        %p
+        %h2 Matt Hersh
       %div
       %label Name:
       %input{"ng-model" => "yourName", :placeholder => "Enter a name here", :type => "text"}/
