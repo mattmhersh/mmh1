@@ -1,6 +1,6 @@
 function TodoCtrl($scope) {
-    $scope.todos = [
         {text:'learn angular 2', done:true},
+    $scope.todos = [
         {text:'build an angular app', done:false}];
 
     $scope.addTodo = function() {
@@ -24,3 +24,5 @@ function TodoCtrl($scope) {
         });
     };
 }
+
+
