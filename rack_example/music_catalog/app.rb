@@ -1,21 +1,9 @@
-require "rubygems"
-require "sinatra/base"
-require "haml"
-require "rdiscount"
+# app.rb
+require 'rubygems'
+require 'sinatra'
 
-#set :markdown, :layout_engine => :haml
+require 'sinatra/rdiscount'
 
-class MusicCatalog < Sinatra::Base
- get "/" do
-   rdiscount "# Hello RDiscount"
- end
-
- get "/about" do
-  haml :about
- end
-
-get "/contact" do
-  haml :contact
-end
-
+get "/" do
+  rdiscount "# Hello RDiscount"
 end
