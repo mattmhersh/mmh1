@@ -7,7 +7,7 @@ set :markdown, :layout_engine => :haml, :format => :html5
 
 class MusicCatalog < Sinatra::Base
  get "/" do
-   redirect '/index.html'
+   send_file 'index.html'
  end
 
  get "/about" do
