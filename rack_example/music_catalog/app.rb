@@ -7,7 +7,7 @@ set :markdown, :layout_engine => :haml, :format => :html5
 
 class MusicCatalog < Sinatra::Base
  get "/" do
-   send_file File.join('public', 'index.html')
+   send_file File.join('public', '/views/index.html')
  end
 
  get "/about" do
